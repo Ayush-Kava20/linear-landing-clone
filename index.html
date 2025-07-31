@@ -9,21 +9,23 @@
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
-
     </style>
+
 </head>
-<body class="bg-[#08090A] text-white font-sans min-h-screen">
+<body class="bg-[#08090A] text-white font-sans">
 
     <header class="bg-[#08090A] w-full border-b border-[#1b1c1c] h-16 sticky top-0 z-30">
-        <nav class="flex justify-center h-full">
-            <div class="relative px-14 h-full flex items-center justify-center">
-                <ul class="flex gap-5 items-center text-sm font-medium">
-                    <li class="mr-36 rounded object-contain w-20 cursor-pointer">
+        <nav class="flex justify-center  h-full">
+            <div class="relative px-14 h-full flex items-center justify-center ">
+                <ul class=" flex gap-5 items-center text-sm font-medium h-full ">
+                    <li class=" lg:mr-36 rounded object-contain w-20 cursor-pointer">
                             <img src="./public/linearLogo.png" alt="">
                     </li>
-                    <li class="relative group text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer">
-                        Product
-                        <div class="absolute top-full mt-3 p-2 left-0 w-[650px] bg-black text-white
+                    <li class="relative group text-[#696C73] px-2 py-1 h-full rounded hover:text-white transition cursor-pointer flex items-center">
+                        <button class="py-1 px-3 group-hover:bg-[#131315] rounded">
+                            Product
+                        </button>
+                        <div class="absolute top-12 mt-3 p-2 w-[650px] bg-black text-white left-[-100px]
                         rounded-[10px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
                             
                             <div class="grid grid-cols-3 gap-5 bg-[#161618] p-5 rounded-[10px] border-none text-[13px]">
@@ -90,9 +92,13 @@
                             </div>
                         </div>
                     </li>
-                    <li class="relative group text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer">
-                        Resources
-                        <div class="absolute top-full mt-3 p-2 left-0 w-[650px] bg-black text-white rounded-[10px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+                    <li class="relative group text-[#696C73] group-hover:bg-[#131315] px-2 py-1 rounded hover:text-white transition cursor-pointer">
+                        <button class="py-1 px-3 group-hover:bg-[#131315] rounded">
+                            Resources
+                        </button>
+                        
+                        <div class="absolute top-full mt-3 p-2 w-[650px] bg-black text-white rounded-[10px] shadow-lg left-[-200px]
+                        opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
                             <div class="grid grid-cols-3 gap-5 bg-[#161618] p-5 rounded-[10px] border-none text-[13px]">
 
                                 <div class="flex flex-col text-[#A1A1AA] px-3">
@@ -150,29 +156,49 @@
                             </div>
                         </div>
                     </li>
-                    <li class="text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer">Customers</li>
-                    <li class="text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer">Blog</li>
-                    <li class="text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer">Content</li>
-                    <li class="text-[#696C73] ml-20 px-2 py-1 rounded hover:text-white transition cursor-pointer">Log in</li>
-                    <li class="bg-[#E6E6E6] text-black px-6 py-2 rounded-[3px] hover:bg-white transition cursor-pointer">Sign up</li>
-                </ul>
+                    <li class="text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer hidden md:block">Customers</li>
+                    <li class="text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer hidden md:block">Blog</li>
+                    <li class="text-[#696C73] px-2 py-1 rounded hover:text-white transition cursor-pointer hidden md:block">Content</li>
+                    <li class="text-[#696C73] lg:ml-20 rounded hover:text-white transition cursor-pointer hidden md:block">
+                        <button class="cursor-pointer">
+                            Log in
+                        </button>
+                    </li>
+                    <li class="bg-[#E6E6E6] text-black px-6 py-2 rounded-[3px] hover:bg-white transition cursor-pointer hidden md:block">
+                        <button>
+                            Sign in
+                        </button>
+                    </li>
+                    <li class="block relative md:hidden">
+                        <button onclick="handleMenu()">
+                            Menu
+                        </button>
+                        <div class="absolute left-[-50px]">
+                            <ul id="mobile-menu" class="hidden flex-col bg-black text-white p-4 rounded">
+                                <li class="mt-2"><button>Customers</button></li>
+                                <li class="mt-2"><button>Blog</button></li>
+                                <li class="mt-2"><button>Content</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                    </ul>
             </div>
         </nav>
     </header>
 
-    <section class="pt-[72px] px-4">
-        <h1 class="text-[52px] leading-[62px] font-semibold text-white max-w-[950px] mx-auto text-left">
+    <section class="pt-[72px] px-4 w-full">
+        <h1 class="text-[35px]  sm:text-[52px] sm:leading-[62px] font-semibold text-white lg:max-w-[950px] lg:mx-auto text-left">
             Linear is a purpose-built tool for planning and building products
         </h1>
-        <div class="text-xl font-semibold text-white max-w-[950px] mx-auto text-left flex flex-col mt-5">
+        <div class="text-xl font-semibold text-white lg:max-w-[950px] lg:mx-auto text-left flex flex-col mt-5">
             <p class="text-[#696C73]">Meet the system for modern software development.</p>
             <p class="text-[#696C73]">Streamline issues, projects, and product roadmaps.</p>
         </div>
-        <div class="max-w-[950px] mx-auto flex mt-5">
-            <button class="bg-[#E6E6E6] text-black px-5 py-2 rounded-[10px] hover:bg-white transition cursor-pointer duration-150">
+        <div class="lg:max-w-[950px] lg:mx-auto flex mt-5">
+            <button class="bg-[#E6E6E6] text-black px-2 sm:px-5 sm:py-2 rounded-[10px] hover:bg-white transition cursor-pointer duration-150">
                 Start building
             </button>
-            <button class="ml-7 text-[#696C73] hover:text-white hover:bg-[#161618] rounded-[10px] px-4 transition cursor-pointer duration-200">
+            <button class="ml-7 text-[#696C73] hover:text-white hover:bg-[#161618] rounded-[10px] px-1 sm:px-4 transition cursor-pointer duration-200">
                 Introducing Linear for Agents  >
             </button>
         </div>
@@ -181,7 +207,7 @@
         </div>
     </section>
 
-    <section class="page_customers max-w-[950px] h-auto mx-auto p-5 mt-20 text-white">
+    <section class="page_customers  w-full lg:max-w-[950px] h-auto lg:mx-auto p-5 mt-20 text-white">
         <div class="text-content ">
             <div class=" w-full flex justify-center text-[21px]">
                 <p>Powering the world’s best product teams.</p>
@@ -198,45 +224,45 @@
                         Meet our customers &gt;
                     </button>
                 </div> 
-                <div class="cutomers relative grid grid-cols-3  p-2 gap-2 w-full mt-5 text-3xl text-white rounded hover:blur-xs transition cursor-pointer">
-                    <div class=" rounded flex justify-center items-center gap-3 p-2 min-h-[100px]">
-                    <div class="image object-contain h-auto w-[40px]">
-                        <img src="./public/perplexity-ai-icon.webp" alt="" >
+                <div class="cutomers relative grid grid-cols-2 md:grid-cols-3 p-2 gap-2 w-full mt-5 text-3xl text-white rounded hover:blur-xs transition cursor-pointer">
+                    <div class=" rounded flex justify-center items-center gap-2 p-2 min-h-[100px]">
+                        <div class="image object-contain w-[50px] sm:w-[40px]">
+                            <img src="./public/perplexity-ai-icon.webp" alt="" >
+                        </div>
+                        <h2 class="text-[23px] sm:text-[30px]">Perplexity</h2>
                     </div>
-                    <h2>Perplexity</h2>
-                </div>
-                <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
-                    <h2>Open AI</h2>
-                </div>
-                <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
-                    <h2>Monzo</h2>
-                </div>
-                <div class=" rounded flex justify-center items-center gap-2  p-2 min-h-[100px]">
-                    <div class="image object-contain h-auto w-[40px]">
-                        <img src="./public/cashapp.jpg" alt="">
+                    <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
+                        <h2>Open AI</h2>
                     </div>
-                    <h2>Cash app</h2>
-                </div>
-                <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
-                    <div class="image object-contain h-auto w-[40px]">
-                        <img src="./public/vercel.png" alt="">
+                    <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
+                        <h2>Monzo</h2>
                     </div>
-                    <h2>Vercel</h2>
-                </div>
-                <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
-                    <div class="image object-contain h-auto w-[40px]">
-                        <img src="./public/images.png" alt="">
+                    <div class=" rounded flex justify-center items-center gap-2  p-2 min-h-[100px]">
+                        <div class="image object-contain h-auto w-[40px]">
+                            <img src="./public/cashapp.jpg" alt="">
+                        </div>
+                        <h2>Cash app</h2>
                     </div>
-                    <h2>Runway</h2>
+                    <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
+                        <div class="image object-contain h-auto w-[40px]">
+                            <img src="./public/vercel.png" alt="">
+                        </div>
+                        <h2>Vercel</h2>
+                    </div>
+                    <div class=" rounded flex justify-center items-center gap-2  p-2 h-full">
+                        <div class="image object-contain h-auto w-[40px]">
+                            <img src="./public/images.png" alt="">
+                        </div>
+                        <h2>Runway</h2>
+                    </div>
                 </div>
-            </div>
         </div>
     </section>
 
-    <section class="page_sectionWhatMakesLinearDifferent max-w-[1100px] h-auto mx-auto p-10 mt-20 text-white w-full">
+    <section class="page_sectionWhatMakesLinearDifferent w-full  max-w-[950px] h-auto lg:mx-auto p-10 mt-20 text-white">
         <div class="text-content grid  grid-cols-2 w-full">
             <div>
-                <h1 class=" text-[3rem] p-3 leading-tight">Made for modern product teams</h1>
+                <h1 class=" text-[2rem] md:text-[3rem] p-3 leading-tight">Made for modern product teams</h1>
             </div>
             <div class="p-3 text-[#747d82] mt-3">
                 <p>Linear is shaped by the practices and principles that distinguish world-class product teams from the 
@@ -249,12 +275,12 @@
         </div>
 
         <!-- cards -->
-        <div class="cards grid grid-cols-3 gap-4 mt-5 ">
-            <div class=" rounded-3xl p-3 bg-[#141517] hover:bg-[#17191c] transition cursor-pointer">
+        <div class="cards flex gap-4 mt-5 overflow-x-auto md:overflow-visible h-[350px]">
+            <div class=" min-w-[300px] md:min-w-auto rounded-3xl p-3 bg-[#141517] hover:bg-[#17191c] transition cursor-pointer">
                 <div class="image object-contain">
-                    <img src="./public//card-01.png" alt="">
+                    <img src="./public/card-01.png" alt="">
                 </div>
-                <div class="card-text text-xl mt-2 flex gap-1  items-center justify-center">
+                <div class="card-text text-xl mt-2 flex gap-4  items-center justify-center">
                     <div>
                         <p>
                             Purpose-built for 
@@ -268,11 +294,11 @@
                     </div>
                 </div>
             </div>
-            <div class=" rounded-3xl  p-3 bg-[#141517] hover:bg-[#17191c] transition cursor-pointer">
+            <div class="min-w-[300px] md:min-w-auto rounded-3xl  p-3 bg-[#141517] hover:bg-[#17191c] transition cursor-pointer">
                 <div class="image object-contain">
                     <img src="./public/card-02.png" alt="">
                 </div>
-                <div class="card-text text-xl mt-2 flex gap-4   items-center justify-center">
+                <div class="card-text text-xl mt-2 flex gap-4 items-center justify-center">
                     <div>
                         <p>
                             Design to move fast 
@@ -285,11 +311,11 @@
                     </div>
                 </div>
             </div>
-            <div class=" rounded-3xl  p-3 bg-[#141517] hover:bg-[#17191c] transition cursor-pointer">
+            <div class="min-w-[300px] md:min-w-auto rounded-3xl  p-3 bg-[#141517] hover:bg-[#17191c] transition cursor-pointer">
                 <div class="image object-contain">
                     <img src="./public//card-03.png" alt="">
                 </div>
-                <div class="card-text text-xl mt-2 flex gap-3  items-center justify-center">
+                <div class="card-text text-xl mt-2 flex gap-4  items-center justify-center">
                     <div>
                         <p>
                             Crafted to perfection
@@ -305,9 +331,9 @@
         </div>
     </section>
 
-    <div class=" p-3 mx-auto mt-20 shadow-[inset_0_100px_60px_rgba(255,255,255,0.03)]">
+    <div class=" p-3 lg:mx-auto mt-20 shadow-[inset_0_100px_60px_rgba(255,255,255,0.03)]">
         <!-- Section Page planning  -->
-        <section class="page_planning relative max-w-[950px] h-[100px] z-10 mx-auto p-10 mt-20 text-white inset-shadow-sm flex flex-col">
+        <section class="page_planning relative lg:max-w-[950px] h-auto md:h-[250px] lg:h-[100px] z-10 lg:mx-auto p-10 mt-20 text-white inset-shadow-sm flex flex-col">
             <div class="text-content">
             <div class="btn ">
                     <button class="flex items-center gap-2">
@@ -316,7 +342,7 @@
                     </button>
                 </div>
                 <div class="heading">
-                    <h1 class="text-white text-[4rem] font-semibold">
+                    <h1 class="text-white  text-[3rem] sm:text-[4rem] font-semibold">
                         Set the product direction
                     </h1>
                 </div>
@@ -332,14 +358,14 @@
         </section>
     </div>
 
-    <div class="w-full mt-10 -z-10">
+    <div class="w-full md:mt-10 -z-10">
         <img src="./public/second-bg.webp" alt="Planning Image" class="w-full h-auto " />
     </div>
 
 
     <!-- Section Project Overview  -->
-    <section class="page_project_overview max-w-[950px] h-auto mx-auto p-10 mt-20 text-white w-full">
-        <div class="grid grid-cols-2 ">
+    <section class="page_project_overview w-full lg:max-w-[950px] h-auto lg:mx-auto p-10 mt-20 text-white">
+        <div class="grid grid-cols-1 lg:grid-cols-2 ">
             <div>
                 <div class="text mt-3 h-[120px]">
                     <h1 class="font-semibold text-2xl">
@@ -376,27 +402,28 @@
                 </h1>
 
                 <div class="btns mt-3">
-                    <button class="flex items-center gap-2">
+                    <button id="btn-1" class="img-btn flex items-center gap-2" onclick="setImage(1)">
                         <span class="inline-block h-5 w-1 bg-green-500 rounded-full"></span>
                         Colloborative documents 
                     </button>
-                    <button class="flex items-center gap-2 mt-1 text-[#696C73] hover:text-white cursor-pointer">
-                        <span class="inline-block h-5 w-1 bg-[#232326] rounded-full "></span>
+                    <button id="btn-2"  class="img-btn flex items-center gap-2 mt-1 text-[#696C73] hover:text-white cursor-pointer"
+                        onclick="setImage(2)">
+                        <span class="inline-block h-5 w-1 bg-[#232326] rounded-full"></span>
                         Inline comments
                     </button>
-                    <button class="flex items-center gap-2 mt-1 text-[#696C73] hover:text-white cursor-pointer">
+                    <button id="btn-3" class="img-btn flex items-center gap-2 mt-1 text-[#696C73] hover:text-white cursor-pointer" onclick="setImage(3)">
                         <span class="inline-block h-5 w-1 bg-[#232326] rounded-full "></span>
                         Text-to-issue command
                     </button>
                 </div>
             </div>
             <div>
-                <img src="./public/right-mini-02.png" alt="">
+                <img id="changable-image" src="./public/right-mini-02.png" alt="">
             </div>
         </div>
 
 
-        <div class="feture grid grid-cols-4  border-t-2 border-[#696C73] py-10">
+        <div class="feture grid grid-cols-2 mg:grid-cols-4  border-t-2 border-[#696C73] py-10">
             <div class="h-[100px]">
                 <div class="heading flex gap-1">
                     <div class="img text-white font-semibold h-[30px] w-auto inline overflow-hidden">
@@ -453,8 +480,8 @@
     </section>
     
     <!-- Section issue tracking  -->
-         <div class=" p-3  mx-auto mt-20 shadow-[inset_0_200px_60px_rgba(255,255,255,0.03)]">
-             <section class="page_issue_tracking max-w-[950px] h-[200px] z-10 mx-auto p-10 mt-20 text-white">
+         <div class=" p-3  lg:mx-auto mt-20 shadow-[inset_0_200px_60px_rgba(255,255,255,0.03)]">
+             <section class="page_issue_tracking lg:max-w-[950px] md:h-[200px] z-10 lg:mx-auto p-10 mt-20 text-white">
                  <div class="text-content">
                      <div class="btn ">
                          <button class="flex items-center gap-2">
@@ -481,13 +508,13 @@
     </section>
 </div>
     
-    <div class="third-bg w-full h-auto mt-0">
+    <div class="third-bg w-full h-auto md:mt-0 ">
         <img src="./public/third.webp" alt="">
     </div>
 
     <!-- Issue traking -->
-    <section class="page_issue_tracking max-w-[950px] h-auto mx-auto p-10 mt-20 text-white">
-        <div class="grid grid-cols-2 ">
+    <section class="page_issue_tracking w-full lg:max-w-[950px] h-auto lg:mx-auto p-10 mt-20 text-white">
+        <div class="grid md:grid-cols-2 ">
             <div>
                 <div class="img w-full h-auto border-t-1 border-r-1  border-b-1 p-2 py-3 border-[#151616]">
                     <div class="text mt-3 h-[120px]">
@@ -536,7 +563,7 @@
         <img src="./public/insight.png" alt="">
 
         
-        <div class="feture grid grid-cols-4  border-t border-[#1b1c1c] py-10">
+        <div class="feture grid grid-cols-2 sm:grid-cols-4 gap-5 border-t border-[#1b1c1c] py-10">
             <div class="h-[100px]">
                 <div class="heading flex gap-1">
                     <div class="img text-white font-semibold h-[30px] w-auto inline overflow-hidden">
@@ -593,9 +620,9 @@
     </section>
 
     <!-- AI Works -->
-     <div class="p-3 mx-auto mt-20 shadow-[inset_0_150px_60px_rgba(255,255,255,0.03)]">
+     <div class="p-3 lg:mx-auto mt-20 shadow-[inset_0_150px_60px_rgba(255,255,255,0.03)]">
          
-         <section class="page_workflows max-w-[950px] h-auto mx-auto p-10 mt-20 text-white">
+         <section class="page_workflows lg:max-w-[950px] h-auto lg:mx-auto p-10 mt-20 text-white">
              <div class="text-content">
                  <div class="btn ">
                      <button class="flex items-center gap-2">
@@ -620,7 +647,7 @@
         
         <img src="./public/ai-work.png" alt="">
         
-        <div class="grid grid-cols-2 ">
+        <div class="grid md:grid-cols-2 ">
             <div class="img w-full h-auto border-t-1 border-r-1  border-b-1 p-2 py-3 border-[#151616]">
                 <div class="text mt-3 h-[120px] p-4 mb-3">
                     <h1 class="font-semibold text-2xl">
@@ -633,7 +660,7 @@
                 <img src="./public/linear-mcp.png" alt="">
             </div>
             <div class="img w-full h-auto border-t-1 border-l-1  border-b-1 border-[#151616]  py-3 px-3 p-2">
-                <div class="text mt-3  h-[120px] p-4 mb-3">
+                <div class="text mt-3 h-[135px] md:h-[120px] p-4 mb-3">
                     <h1 class="font-semibold text-2xl ">
                         AI natively built in
                     </h1>
@@ -642,13 +669,13 @@
                     </p>
                 </div>
                 <img src="./public/ai-natively.png" alt="" class="mb-2">
-                </div>
+            </div>
             </div>
         </section>
     </div>
         
         <!-- collaborate across -->
-     <section class="page_workflows max-w-[950px] h-auto mx-auto p-10 mt-20 text-white">
+     <section class="page_workflows lg:max-w-[950px] h-auto lg:mx-auto p-10 mt-20 text-white">
          <div class="text-content">
              <div class="btn ">
                  <button class="flex items-center gap-2">
@@ -656,7 +683,7 @@
                      Workflows and integrations
                     </button>
             </div>
-            <div class="text-content grid  grid-cols-2 w-full">
+            <div class="text-content grid  sm:grid-cols-2 w-full">
                 <div>
                     <h1 class=" text-[3rem] p-3 leading-tight">
                         Collaborate across tools and teams
@@ -672,8 +699,8 @@
      </section>
 
      <!-- Colloborate cardss -->
-     <section class="w-full h-[400px] p-10 max-w-[950px] h-auto mx-auto ">
-        <div class="flex scroll-smooth gap-3 overflow-x-auto no-scrollbar">
+     <section class="w-full h-auto p-10 lg:max-w-[950px] lg:mx-auto flex flex-col">
+        <div id="scroll-container" class="flex scroll-smooth gap-3 overflow-x-auto no-scrollbar">
             
             <div class="min-w-[300px] border border-[#7d858a]/20 p-2 rounded-2xl hover:bg-[#0f1011] transition cursor-pointer flex-shrink-0">
                 <div class="img">
@@ -747,7 +774,7 @@
                 </div>
             </div>
             
-            <div class="min-w-[300px] border border-[#7d858a]/20 p-2 rounded-2xl hover:bg-[#0f1011] transition cursor-pointer flex-shrink-0">
+            <div class="min-w-[300px] border  border-[#7d858a]/20 p-2 rounded-2xl hover:bg-[#0f1011] transition cursor-pointer flex-shrink-0">
                 <div class="img">
                     <img src="./public/co-card-07.png" alt="">
                 </div>
@@ -759,12 +786,17 @@
                 </div>
             </div>
         </div>
+
+        <div class="bottom-4 left-4 flex gap-1  md:gap-5 justify-center mt-5">
+            <button onclick="scrollContainerLeft()" class="px-2 py-1 bg-[#1c1c1e] rounded-full text-white hover:bg-[#2c2c2e]">←</button>
+            <button onclick="scrollContainerRight()" class="px-2 py-1 bg-[#1c1c1e] rounded-full text-white hover:bg-[#2c2c2e]">→</button>
+        </div>
      </section>
     
     <!-- foundation section  -->
-              <section class="mt-11 p-5 mt-20">
-                  <div class=" grid grid-cols-2">
-                      <div class=" flex p-5 pl-[300px] flex-col">
+              <section class="p-5 mt-20">
+                  <div class=" grid lg:grid-cols-2">
+                      <div class=" flex p-5 lg:pl-[300px] flex-col">
                           
                           <div class="text-content max-w-[300px] ">
                               <div class="btn ">
@@ -843,7 +875,7 @@
         </section>
     
     <!-- pre-footer  -->
-    <section class="prefooter max-w-[950px] h-auto mx-auto p-10 mt-10 text-white flex gap-20">
+    <section class="prefooter lg:max-w-[950px] h-auto lg:mx-auto p-10 mt-10 text-white flex gap-20">
         <div class="left">
             <h1 class="text-[30px] font-bold">
                 Plan the present. Build the future.
@@ -857,8 +889,8 @@
 
      <hr class="text-[#252323]"/>
 
-     <footer class="h-auto max-w-[950px] mx-auto mt-8 mb-3">
-        <div class="grid grid-cols-6">
+     <footer class="h-auto w-full lg:max-w-[950px] lg:mx-auto mt-8 mb-3">
+        <div class="grid grid-cols-3 md:grid-cols-6">
             <div class=" p-3 h-auto w-full">
                 <div class="h-auto w-[30px]">
                     <img src="./public/linear-app-icon.png" alt="" class="object-contain">
@@ -920,3 +952,49 @@
      </footer>
 </body>
 </html>
+
+<script>
+        const container = document.getElementById('scroll-container')
+        function scrollContainerLeft(){
+            container.scrollBy({left: -320, behavior:"smooth"})
+        }
+        function scrollContainerRight(){
+            container.scrollBy({left: 320, behavior:"smooth"})
+        }
+
+        function handleMenu(){
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function setImage(imageNumber){
+            const image = document.getElementById('changable-image');
+
+            if(imageNumber === 1){
+                image.src = './public/right-mini-02.png';
+            }
+            else if(imageNumber === 2){
+                image.src = "./public/inline-comment.png"
+            }else if(imageNumber === 3){
+                image.src = "./public/text-issue.png"
+            }
+
+            const btns = document.querySelectorAll('.img-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('text-white');
+                btn.classList.add('text-[#696C73]');
+
+                const span = btn.querySelector('span');
+                span.classList.remove('bg-green-500');
+                span.classList.add('bg-[#232326]');
+            });
+
+            const activeBtn = document.getElementById(`btn-${imageNumber}`);
+            activeBtn.classList.remove('text-[#696C73]');
+            activeBtn.classList.add('text-white');
+
+            const activeSpan = activeBtn.querySelector('span');
+            activeSpan.classList.remove('bg-[#232326]');
+            activeSpan.classList.add('bg-green-500');
+        }
+</script>
